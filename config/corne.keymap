@@ -23,7 +23,7 @@
 
             label = "Base";
             bindings = <
-&kp ESC    &kp Q  &kp W  &kp E        &kp R        &kp T       &kp Y    &kp U          &kp I              &kp O          &kp P          &kt F18
+&kp ESC    &kp Q  &kp W  &kp E        &kp R        &kp T       &kp Y    &kp U          &kp I              &kp O          &kp P          &kp F18
 &kp TAB    &kp A  &kp S  &kp D        &lt 1 F      &kp G       &kp H    &kp J          &kp K              &kp L          &mo 4          &kp RC(B)
 &kp LSHFT  &kp Z  &kp X  &mt LCTRL C  &kp V        &kp B       &kp N    &kp M          &kp RIGHT_CONTROL  &kp RIGHT_ALT  &kp RIGHT_GUI  &kp F19
                          &mo 3        &lt 2 SPACE  &kp LALT    &kp RET  &kp BACKSPACE  &mo 3
@@ -65,7 +65,7 @@
         nav {
             bindings = <
 &trans  &kp RG(W)  &trans     &trans     &kp RG(LEFT_BRACKET)  &trans    &trans                               &kp RG(RIGHT_BRACKET)  &trans                &trans                           &trans         &trans
-&trans  &kp LG(A)  &kp RG(S)  &trans     &kp RG(F)             &trans    &mt LC(A) LA(LEFT)                   &mt RG(DOWN) DOWN      &mt RG(UP) UP_ARROW   &mt LC(E) LA(RIGHT)              &trans         &caps_word
+&trans  &kp LG(A)  &kp RG(S)  &trans     &kp RG(F)             &trans    &mt LC(A) LA(LEFT)                   &mt RG(DOWN) DOWN      &mt RG(UP) UP_ARROW   &mt LC(E) LA(RIGHT)              &trans         &trans
 &trans  &kp RG(Z)  &kp RG(X)  &kp RG(C)  &kp RG(V)             &trans    &mt LS(LG(LEFT_ARROW)) LS(LA(LEFT))  &kt LS(LA(DOWN))       &kp LS(LA(UP_ARROW))  &mt LS(LG(RIGHT)) LS(LA(RIGHT))  &kp RG(RS(Z))  &trans
                               &trans     &trans                &trans    &trans                               &trans                 &trans
             >;

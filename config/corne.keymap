@@ -22,21 +22,21 @@
 
             label = "Base";
             bindings = <
-&kp ESC    &kp Q  &kp W  &kp E        &kp R        &kp T       &kp Y    &kp U          &kp I              &kp O          &kp P          &kp F18
-&kp TAB    &kp A  &kp S  &kp D        &lt 1 F      &kp G       &kp H    &kp J          &kp K              &kp L          &mo 4          &kp RC(B)
-&kp LSHFT  &kp Z  &kp X  &mt LCTRL C  &kp V        &kp B       &kp N    &kp M          &kp RIGHT_CONTROL  &kp RIGHT_ALT  &kp RIGHT_GUI  &kp F19
-                         &mo 3        &lt 2 SPACE  &kp LALT    &kp RET  &kp BACKSPACE  &mo 3
+&kp ESC    &kp Q  &kp W  &kp E  &kp R        &kp T       &kp Y                    &kp U          &kp I              &kp O          &kp P          &kp F18
+&kp TAB    &kp A  &kp S  &kp D  &lt 1 F      &kp G       &kp H                    &kp J          &kp K              &kp L          &mo 4          &kp RC(B)
+&kp LSHFT  &kp Z  &kp X  &kp C  &kp V        &kp B       &kp N                    &kp M          &kp RIGHT_CONTROL  &kp RIGHT_ALT  &kp RIGHT_GUI  &mo 4
+                         &mo 3  &lt 2 SPACE  &kp LALT    &mt RIGHT_COMMAND ENTER  &kp BACKSPACE  &mo 3
             >;
         };
 
-        system {
+        SYSTEM {
             // -----------------------------------------------------------------------------------------
             // |  TAB |  1  |  2  |  3  |  4  |  5  |   |  6  |  7  |  8  |  9  |  0  | BKSP |
             // | BTCLR| BT1 | BT2 | BT3 | BT4 | BT5 |   | LFT | DWN |  UP | RGT |     |      |
             // | SHFT |     |     |     |     |     |   |     |     |     |     |     |      |
             //                    |BTCLR|     | SPC |   | ENT |     | ALT |
 
-            label = "system";
+            label = "SYSTEM";
             bindings = <
 &kp C_BRIGHTNESS_INC  &bt BT_SEL 0  &bt BT_SEL 1  &bt BT_SEL 2  &bt BT_SEL 3  &bt BT_SEL 4    &trans    &trans    &trans  &trans     &kp RG(PLUS)   &kp C_VOLUME_UP
 &kp C_BRIGHTNESS_DEC  &trans        &trans        &trans        &trans        &trans          &kp LEFT  &kp DOWN  &kp UP  &kp RIGHT  &kp RG(MINUS)  &kp C_VOL_DN
@@ -45,65 +45,42 @@
             >;
         };
 
-        sym {
+        SYMBOL {
             // -----------------------------------------------------------------------------------------
             // |  TAB |  !  |  @  |  #  |  $  |  %  |   |  ^  |  &  |  *  |  (  |  )  | BKSP |
             // | CTRL |     |     |     |     |     |   |  -  |  =  |  [  |  ]  |  \  |  `   |
             // | SHFT |     |     |     |     |     |   |  _  |  +  |  {  |  }  | "|" |  ~   |
             //                    | GUI |     | SPC |   | ENT |     | ALT |
 
-            label = "sym";
+            label = "SYMBOL";
             bindings = <
-&trans  &kp CARET      &kp DOLLAR        &kp LEFT_BRACKET      &kp RIGHT_BRACKET      &kp SLASH        &kp EXCLAMATION  &kp SINGLE_QUOTE   &mt SEMICOLON COLON  &kp ASTERISK  &kp PLUS   &kp AT
-&trans  &trans         &kp LS(POUND)     &kp LEFT_PARENTHESIS  &kp RIGHT_PARENTHESIS  &kp PIPE         &kp PERIOD       &kp DOUBLE_QUOTES  &kp MINUS            &kp PERCENT   &kp EQUAL  &kp TILDE
-&trans  &kp LESS_THAN  &kp GREATER_THAN  &kp LEFT_BRACE        &kp RIGHT_BRACE        &kp BACKSLASH    &kp QUESTION     &kp GRAVE          &kp UNDERSCORE       &kp POUND     &kp COMMA  &kp AMPERSAND
-                                         &trans                &trans                 &trans           &trans           &kp DEL            &trans
+&kp CARET  &trans                          &kp DOLLAR     &trans  &kp LESS_THAN     &kp SLASH               &kp EXCLAMATION        &kp GREATER_THAN   &mt SEMICOLON COLON  &kp ASTERISK      &kp PLUS   &kp AT
+&trans     &mt SINGLE_QUOTE DOUBLE_QUOTES  &kp LS(POUND)  &trans  &kp LEFT_BRACKET  &kp PIPE                &kp PERIOD             &kp RIGHT_BRACKET  &kp MINUS            &kp PERCENT       &kp EQUAL  &kp TILDE
+&trans     &kp GRAVE                       &trans         &trans  &kp LEFT_BRACE    &kp BACKSLASH           &kp QUESTION           &kp RIGHT_BRACE    &kp UNDERSCORE       &kp LA(NUMBER_3)  &kp COMMA  &kp AMPERSAND
+                                                          &trans  &trans            &kp LEFT_PARENTHESIS    &kp RIGHT_PARENTHESIS  &trans             &trans
             >;
         };
 
-        nav {
+        CONTROL {
             bindings = <
-&trans  &kp RG(W)  &trans     &trans     &kp RG(LEFT_BRACKET)  &trans    &trans                               &kp RG(RIGHT_BRACKET)  &trans                &trans                           &kp LS(RA(UP_ARROW))  &trans
-&trans  &kp LG(A)  &kp RG(S)  &trans     &kp RG(F)             &trans    &mt LC(A) LA(LEFT)                   &mt RG(DOWN) DOWN      &mt RG(UP) UP_ARROW   &mt LC(E) LA(RIGHT)              &kp RA(LS(DOWN))      &trans
-&trans  &kp RG(Z)  &kp RG(X)  &kp RG(C)  &kp RG(V)             &trans    &mt LS(LG(LEFT_ARROW)) LS(LA(LEFT))  &kp LS(RG(DOWN))       &kp LS(RG(UP_ARROW))  &mt LS(LG(RIGHT)) LS(LA(RIGHT))  &kp RG(RS(Z))         &trans
-                              &trans     &trans                &trans    &trans                               &trans                 &trans
+&kp RG(LS(NUMBER_4))  &kp RG(W)  &kp RG(S)  &trans     &kp LS(RG(Z))  &trans       &trans                       &kp RG(Z)  &trans  &trans                   &trans  &kp F11
+&trans                &trans     &trans     &kp RC(K)  &kp RG(F)      &trans       &mt RG(LEFT_ARROW) LA(LEFT)  &trans     &trans  &mt RG(RIGHT) LA(RIGHT)  &trans  &kp RG(SPACE)
+&trans                &trans     &kp RG(X)  &trans     &trans         &trans       &trans                       &trans     &trans  &trans                   &trans  &trans
+                                            &trans     &trans         &kp RG(C)    &kp RG(V)                    &trans     &trans
             >;
+
+            label = "CONTROL";
         };
 
-        num {
+        NUMBER {
             bindings = <
 &trans  &trans     &trans     &trans     &trans     &trans       &trans     &trans     &trans     &trans     &trans  &trans
 &trans  &kp KP_N1  &kp KP_N2  &kp KP_N3  &kp KP_N4  &kp KP_N5    &kp KP_N6  &kp KP_N7  &kp KP_N8  &kp KP_N9  &trans  &trans
 &trans  &kp KP_N0  &trans     &trans     &trans     &trans       &trans     &trans     &trans     &trans     &trans  &trans
                               &trans     &trans     &trans       &trans     &trans     &trans
             >;
-        };
 
-        mouse {
-            bindings = <
-&trans  &trans  &trans  &trans  &trans  &trans    &trans  &trans  &trans  &trans  &trans  &trans
-&trans  &trans  &trans  &trans  &trans  &trans    &trans  &trans  &trans  &trans  &trans  &trans
-&trans  &trans  &trans  &trans  &trans  &trans    &trans  &trans  &trans  &trans  &trans  &trans
-                        &trans  &trans  &trans    &trans  &trans  &trans
-            >;
-        };
-
-        layer_6 {
-            bindings = <
-&trans  &trans  &trans  &trans  &trans  &trans    &trans  &trans  &trans  &trans  &trans  &trans
-&trans  &trans  &trans  &trans  &trans  &trans    &trans  &trans  &trans  &trans  &trans  &trans
-&trans  &trans  &trans  &trans  &trans  &trans    &trans  &trans  &trans  &trans  &trans  &trans
-                        &trans  &trans  &trans    &trans  &trans  &trans
-            >;
-        };
-
-        layer_7 {
-            bindings = <
-&trans  &trans  &trans  &trans  &trans  &trans    &trans  &trans  &trans  &trans  &trans  &trans
-&trans  &trans  &trans  &trans  &trans  &trans    &trans  &trans  &trans  &trans  &trans  &trans
-&trans  &trans  &trans  &trans  &trans  &trans    &trans  &trans  &trans  &trans  &trans  &trans
-                        &trans  &trans  &trans    &trans  &trans  &trans
-            >;
+            label = "NUMBER";
         };
     };
 };

@@ -29,24 +29,13 @@
         };
 
         num_layer {
-            bindings = <&mo 0>;
+            bindings = <&mo 2>;
             key-positions = <19 20>;
         };
     };
 
     keymap {
         compatible = "zmk,keymap";
-
-        NUMBER2 {
-            bindings = <
-&trans  &trans  &trans  &kp KP_N7        &kp KP_N8        &kp KP_N9          &trans  &trans  &trans  &trans  &trans  &trans
-&trans  &trans  &trans  &kp KP_N4        &kp KP_NUMBER_5  &kp KP_NUMBER_6    &trans  &trans  &trans  &trans  &trans  &trans
-&trans  &trans  &trans  &kp KP_N1        &kp KP_N2        &kp KP_N3          &trans  &trans  &trans  &trans  &trans  &trans
-                        &kp KP_NUMBER_0  &kp KP_N0        &trans             &trans  &trans  &trans
-            >;
-
-            label = "NUMBER2";
-        };
 
         base {
             // -----------------------------------------------------------------------------------------
@@ -60,8 +49,19 @@
 &kp ESC    &kp Q  &kp W  &kp E  &kp R        &kp T       &kp Y                    &kp U          &kp I      &kp O   &kp P          &kp F18
 &kp TAB    &kp A  &kp S  &kp D  &lt 3 F      &kp G       &kp H                    &kp J          &kp K      &kp L   &kp RIGHT_GUI  &kp RC(B)
 &sk LSHFT  &kp Z  &kp X  &kp C  &kp V        &kp B       &kp N                    &kp M          &trans     &trans  &trans         &trans
-                         &sl 4  &lt 2 SPACE  &kp LALT    &mt RIGHT_COMMAND ENTER  &kp BACKSPACE  &kp RCTRL
+                         &sl 4  &lt 3 SPACE  &kp LALT    &mt RIGHT_COMMAND ENTER  &kp BACKSPACE  &kp RCTRL
             >;
+        };
+
+        NUMBER2 {
+            bindings = <
+&trans  &trans  &trans  &kp KP_N7        &kp KP_N8        &kp KP_N9          &trans  &trans  &trans  &trans  &trans  &trans
+&trans  &trans  &trans  &kp KP_N4        &kp KP_NUMBER_5  &kp KP_NUMBER_6    &trans  &trans  &trans  &trans  &trans  &trans
+&trans  &trans  &trans  &kp KP_N1        &kp KP_N2        &kp KP_N3          &trans  &trans  &trans  &trans  &trans  &trans
+                        &kp KP_NUMBER_0  &kp KP_N0        &trans             &trans  &trans  &trans
+            >;
+
+            label = "NUMBER2";
         };
 
         SYMBOL {

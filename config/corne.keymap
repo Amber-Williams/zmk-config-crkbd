@@ -34,6 +34,15 @@
         };
     };
 
+    macros {
+        long_word: long_word {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <&none &kp LS(T) &kp E &kp X &kp A &kp S &kp LS(T) &kp E &kp X &kp A &kp S &kp LS(C) &kp O &kp D &kp I &kp N &kp G>;
+            label = "LONG_WORD";
+        };
+    };
+
     keymap {
         compatible = "zmk,keymap";
 
@@ -98,10 +107,10 @@
 
         CONTROL {
             bindings = <
-&kp RG(LS(NUMBER_4))  &kp RG(W)  &kp RG(S)  &trans     &kp LS(RG(Z))  &trans       &trans     &kp RG(Z)  &trans  &trans  &trans  &kp F11
-&trans                &trans     &trans     &kp RC(K)  &kp RG(F)      &trans       &trans     &trans     &trans  &trans  &trans  &kp RG(SPACE)
-&trans                &trans     &kp RG(X)  &trans     &trans         &trans       &trans     &trans     &trans  &trans  &trans  &trans
-                                            &trans     &trans         &kp RG(S)    &kp RG(C)  &kp RG(V)  &trans
+&kp RG(LS(NUMBER_4))  &kp RG(W)  &kp RG(S)  &trans     &kp LS(RG(Z))  &trans       &trans     &kp RG(Z)    &trans     &trans     &trans     &kp F11
+&trans                &trans     &trans     &kp RC(K)  &kp RG(F)      &kp RG(N)    &kp LA(E)  &kp RA(C)    &kp LA(W)  &kp LA(N)  &kp LA(M)  &kp RG(SPACE)
+&trans                &trans     &kp RG(X)  &trans     &trans         &trans       &trans     &kp LA(TAB)  &trans     &trans     &trans     &long_word
+                                            &trans     &kp RG(W)      &kp RG(S)    &kp RG(C)  &kp RG(V)    &trans
             >;
 
             label = "CONTROL";

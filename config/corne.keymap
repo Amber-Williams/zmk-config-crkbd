@@ -8,6 +8,7 @@
 #include <behaviors.dtsi>
 #include <dt-bindings/zmk/bt.h>
 #include <dt-bindings/zmk/keys.h>
+#include <dt-bindings/zmk/pointing.h>
 
 / {
     combos {
@@ -28,9 +29,19 @@
             key-positions = <6 5>;
         };
 
-        num_layer {
-            bindings = <&mo 1>;
-            key-positions = <19 20>;
+        paste {
+            bindings = <&kp RG(V)>;
+            key-positions = <3 4>;
+        };
+
+        copy {
+            bindings = <&kp RG(C)>;
+            key-positions = <16 15>;
+        };
+
+        cut {
+            bindings = <&kp RG(X)>;
+            key-positions = <28 27>;
         };
     };
 
@@ -38,7 +49,7 @@
         long_word: long_word {
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
-            bindings = <&none &kp LS(T) &kp E &kp X &kp A &kp S &kp LS(T) &kp E &kp X &kp A &kp S &kp LS(C) &kp O &kp D &kp I &kp N &kp G>;
+            bindings = <&kp LS(T) &kp E &kp X &kp A &kp S &kp LS(C) &kp O &kp D &kp I &kp N &kp G>;
             label = "LONG_WORD";
         };
     };
@@ -55,19 +66,19 @@
 
             label = "Base";
             bindings = <
-&kp ESC    &kp Q  &kp W  &kp E  &kp R        &kp T       &kp Y                    &kp U          &kp I      &kp O   &kp P          &kp F18
-&kp TAB    &kp A  &kp S  &kp D  &lt 3 F      &kp G       &kp H                    &kp J          &kp K      &kp L   &kp RIGHT_GUI  &kp RC(B)
-&sk LSHFT  &kp Z  &kp X  &kp C  &kp V        &kp B       &kp N                    &kp M          &trans     &trans  &trans         &trans
-                         &sl 4  &lt 2 SPACE  &kp LALT    &mt RIGHT_COMMAND ENTER  &kp BACKSPACE  &kp RCTRL
+&kp ESC    &kp Q  &kp W  &kp E  &kp R        &kp T       &kp Y                    &kp U            &kp I             &kp O   &kp P              &kp F18
+&kp TAB    &kp A  &kp S  &kp D  &lt 3 F      &kp G       &kp H                    &kp J            &kp K             &kp L   &kp RIGHT_GUI      &kp RC(B)
+&sk LSHFT  &kp Z  &kp X  &kp C  &kp V        &kp B       &kp N                    &kp M            &trans            &trans  &kp RIGHT_CONTROL  &trans
+                         &sl 4  &lt 2 SPACE  &kp LALT    &mt RIGHT_COMMAND ENTER  &lt 1 BACKSPACE  &mt RCTRL DELETE
             >;
         };
 
         NUMBER2 {
             bindings = <
-&trans  &trans  &trans  &kp KP_N7        &kp KP_N8        &kp KP_N9          &trans  &trans  &trans  &trans  &trans  &trans
-&trans  &trans  &trans  &kp KP_N4        &kp KP_NUMBER_5  &kp KP_NUMBER_6    &trans  &trans  &trans  &trans  &trans  &trans
-&trans  &trans  &trans  &kp KP_N1        &kp KP_N2        &kp KP_N3          &trans  &trans  &trans  &trans  &trans  &trans
-                        &kp KP_NUMBER_0  &kp KP_N0        &trans             &trans  &trans  &trans
+&trans  &kp PLUS   &trans  &kp KP_N7        &kp KP_N8        &kp KP_N9          &trans  &trans  &trans  &trans  &trans  &trans
+&trans  &kp EQUAL  &trans  &kp KP_N4        &kp KP_NUMBER_5  &kp KP_NUMBER_6    &trans  &trans  &trans  &trans  &trans  &trans
+&trans  &kp MINUS  &trans  &kp KP_N1        &kp KP_N2        &kp KP_N3          &trans  &trans  &trans  &trans  &trans  &trans
+                           &kp KP_NUMBER_0  &kp KP_N0        &kp DOT            &trans  &trans  &trans
             >;
 
             label = "NUMBER2";
@@ -82,10 +93,10 @@
 
             label = "SYMBOL";
             bindings = <
-&kp CARET      &kp SINGLE_QUOTE   &trans  &trans          &kp LESS_THAN         &kp SLASH        &kp EXCLAMATION  &kp GREATER_THAN       &mt SEMICOLON COLON  &kp ASTERISK      &kp PLUS   &kp AT
-&kp DOLLAR     &kp DOUBLE_QUOTES  &trans  &trans          &kp LEFT_PARENTHESIS  &kp PIPE         &kp PERIOD       &kp RIGHT_PARENTHESIS  &kp MINUS            &kp PERCENT       &kp EQUAL  &kp TILDE
-&kp LS(POUND)  &kp GRAVE          &trans  &trans          &kp LEFT_BRACKET      &kp BACKSLASH    &kp QUESTION     &kp RIGHT_BRACKET      &kp UNDERSCORE       &kp LA(NUMBER_3)  &kp COMMA  &kp AMPERSAND
-                                          &kp LEFT_BRACE  &trans                &trans           &trans           &trans                 &kp RIGHT_BRACE
+&kp CARET      &kp SINGLE_QUOTE   &trans  &trans  &mt LEFT_BRACE LESS_THAN  &kp SLASH        &kp EXCLAMATION  &mt RIGHT_BRACE GT     &mt SEMICOLON COLON  &kp ASTERISK      &kp PLUS   &kp AT
+&kp DOLLAR     &kp DOUBLE_QUOTES  &trans  &trans  &kp LEFT_PARENTHESIS      &kp PIPE         &kp PERIOD       &kp RIGHT_PARENTHESIS  &kp MINUS            &kp PERCENT       &kp EQUAL  &kp TILDE
+&kp LS(POUND)  &kp GRAVE          &trans  &trans  &kp LEFT_BRACKET          &kp BACKSLASH    &kp QUESTION     &kp RIGHT_BRACKET      &kp UNDERSCORE       &kp LA(NUMBER_3)  &kp COMMA  &kp AMPERSAND
+                                          &trans  &trans                    &trans           &trans           &trans                 &trans
             >;
         };
 
@@ -98,19 +109,19 @@
 
             label = "UTILITY";
             bindings = <
-&kp C_BRIGHTNESS_INC  &trans  &trans  &trans  &trans  &trans    &mt RG(LEFT) RA(LEFT_ARROW)  &trans    &trans  &mt RG(RIGHT) RA(RIGHT)  &kp RG(PLUS)   &kp C_VOLUME_UP
-&kp C_BRIGHTNESS_DEC  &trans  &trans  &trans  &trans  &trans    &kp LEFT                     &kp DOWN  &kp UP  &kp RIGHT                &kp RG(MINUS)  &kp C_VOL_DN
-&trans                &trans  &trans  &trans  &trans  &trans    &trans                       &trans    &trans  &trans                   &trans         &kp K_MUTE
-                                      &trans  &trans  &trans    &trans                       &trans    &trans
+&kp C_BRIGHTNESS_INC  &trans  &trans  &trans  &trans    &trans      &trans                 &trans                   &trans  &trans     &kp RG(PLUS)   &kp C_VOLUME_UP
+&kp C_BRIGHTNESS_DEC  &trans  &trans  &trans  &trans    &trans      &kp LEFT               &kp DOWN                 &kp UP  &kp RIGHT  &kp RG(MINUS)  &kp C_VOL_DN
+&trans                &trans  &trans  &trans  &trans    &trans      &trans                 &trans                   &trans  &trans     &trans         &kp K_MUTE
+                                      &trans  &mkp MB4  &mkp MB5    &mt RG(LEFT) LA(LEFT)  &mt RG(RIGHT) RA(RIGHT)  &trans
             >;
         };
 
         CONTROL {
             bindings = <
-&kp RG(LS(NUMBER_4))  &kp RG(W)  &kp RG(S)  &trans     &kp LS(RG(Z))  &trans       &trans     &kp RG(Z)    &trans     &trans     &trans     &kp F11
-&trans                &trans     &trans     &kp RC(K)  &kp RG(F)      &kp RG(N)    &kp LA(E)  &kp RA(C)    &kp LA(W)  &kp LA(N)  &kp LA(M)  &kp RG(SPACE)
-&trans                &trans     &kp RG(X)  &trans     &trans         &trans       &trans     &kp LA(TAB)  &trans     &trans     &trans     &long_word
-                                            &trans     &kp RG(W)      &kp RG(S)    &kp RG(C)  &kp RG(V)    &trans
+&kp RG(LS(NUMBER_4))  &kp RG(W)  &trans  &trans  &trans     &trans       &trans     &trans         &trans     &trans     &trans     &kp F11
+&trans                &trans     &trans  &trans  &kp RG(F)  &kp RG(N)    &trans     &kp RA(C)      &kp LA(M)  &kp LA(N)  &kp LA(W)  &kp RG(SPACE)
+&trans                &trans     &trans  &trans  &trans     &trans       &kp RG(N)  &kp LA(TAB)    &trans     &trans     &trans     &long_word
+                                         &trans  &trans     &kp RG(S)    &kp RG(Z)  &kp RG(LS(Z))  &trans
             >;
 
             label = "CONTROL";

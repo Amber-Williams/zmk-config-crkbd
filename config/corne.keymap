@@ -31,17 +31,17 @@
 
         paste {
             bindings = <&kp RG(V)>;
-            key-positions = <3 4>;
+            key-positions = <3 4 2>;
         };
 
         copy {
             bindings = <&kp RG(C)>;
-            key-positions = <16 15>;
+            key-positions = <16 15 14>;
         };
 
         cut {
             bindings = <&kp RG(X)>;
-            key-positions = <28 27>;
+            key-positions = <28 27 26>;
         };
     };
 
@@ -51,6 +51,13 @@
             #binding-cells = <0>;
             bindings = <&kp LS(T) &kp E &kp X &kp A &kp S &kp LS(C) &kp O &kp D &kp I &kp N &kp G>;
             label = "LONG_WORD";
+        };
+
+        copy_all: copy_all {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <&kp RG(A) &kp RG(C)>;
+            label = "COPY_ALL";
         };
     };
 
@@ -68,7 +75,7 @@
             bindings = <
 &kp ESC    &kp Q  &kp W  &kp E  &kp R        &kp T       &kp Y                    &kp U            &kp I             &kp O   &kp P              &kp F18
 &kp TAB    &kp A  &kp S  &kp D  &lt 3 F      &kp G       &kp H                    &kp J            &kp K             &kp L   &kp RIGHT_GUI      &kp RC(B)
-&sk LSHFT  &kp Z  &kp X  &kp C  &kp V        &kp B       &kp N                    &kp M            &trans            &trans  &kp RIGHT_CONTROL  &trans
+&sk LSHFT  &kp Z  &kp X  &kp C  &kp V        &kp B       &kp N                    &kp M            &trans            &trans  &kp RIGHT_CONTROL  &kp F19
                          &sl 4  &lt 2 SPACE  &kp LALT    &mt RIGHT_COMMAND ENTER  &lt 1 BACKSPACE  &mt RCTRL DELETE
             >;
         };
@@ -109,22 +116,33 @@
 
             label = "UTILITY";
             bindings = <
-&kp C_BRIGHTNESS_INC  &trans  &trans  &trans  &trans    &trans      &trans                 &trans                   &trans  &trans     &kp RG(PLUS)   &kp C_VOLUME_UP
-&kp C_BRIGHTNESS_DEC  &trans  &trans  &trans  &trans    &trans      &kp LEFT               &kp DOWN                 &kp UP  &kp RIGHT  &kp RG(MINUS)  &kp C_VOL_DN
-&trans                &trans  &trans  &trans  &trans    &trans      &trans                 &trans                   &trans  &trans     &trans         &kp K_MUTE
-                                      &trans  &mkp MB4  &mkp MB5    &mt RG(LEFT) LA(LEFT)  &mt RG(RIGHT) RA(RIGHT)  &trans
+&kp C_BRIGHTNESS_INC  &trans  &trans  &trans  &trans  &trans    &trans                 &trans                   &trans  &trans     &kp RG(PLUS)   &kp C_VOLUME_UP
+&kp C_BRIGHTNESS_DEC  &trans  &trans  &trans  &trans  &trans    &kp LEFT               &kp DOWN                 &kp UP  &kp RIGHT  &kp RG(MINUS)  &kp C_VOL_DN
+&trans                &trans  &trans  &trans  &trans  &trans    &trans                 &trans                   &trans  &trans     &trans         &kp K_MUTE
+                                      &trans  &trans  &trans    &mt RG(LEFT) LA(LEFT)  &mt RG(RIGHT) RA(RIGHT)  &trans
             >;
         };
 
         CONTROL {
             bindings = <
 &kp RG(LS(NUMBER_4))  &kp RG(W)  &trans  &trans  &trans     &trans       &trans     &trans         &trans     &trans     &trans     &kp F11
-&trans                &trans     &trans  &trans  &kp RG(F)  &kp RG(N)    &trans     &kp RA(C)      &kp LA(M)  &kp LA(N)  &kp LA(W)  &kp RG(SPACE)
-&trans                &trans     &trans  &trans  &trans     &trans       &kp RG(N)  &kp LA(TAB)    &trans     &trans     &trans     &long_word
+&trans                &copy_all  &trans  &trans  &kp RG(F)  &trans       &trans     &kp RA(C)      &kp LA(M)  &kp LA(N)  &kp LA(W)  &kp RG(SPACE)
+&trans                &trans     &trans  &trans  &trans     &trans       &kp RG(N)  &trans         &trans     &trans     &trans     &long_word
                                          &trans  &trans     &kp RG(S)    &kp RG(Z)  &kp RG(LS(Z))  &trans
             >;
 
             label = "CONTROL";
+        };
+
+        MOUSE {
+            bindings = <
+&trans  &trans  &trans  &trans  &trans  &trans    &trans          &trans          &trans        &trans           &trans  &trans
+&trans  &trans  &trans  &trans  &trans  &trans    &msc SCRL_LEFT  &msc SCRL_DOWN  &msc SCRL_UP  &msc SCRL_RIGHT  &trans  &trans
+&trans  &trans  &trans  &trans  &trans  &trans    &trans          &trans          &trans        &trans           &trans  &trans
+                        &trans  &trans  &trans    &mkp MB4        &mkp MB5        &trans
+            >;
+
+            label = "MOUSE";
         };
     };
 };

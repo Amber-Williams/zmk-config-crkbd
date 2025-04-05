@@ -63,9 +63,9 @@
             bindings = <&kp>, <&kp>;
 
             #binding-cells = <2>;
-            tapping-term-ms = <200>;
+            tapping-term-ms = <250>;
             flavor = "tap-preferred";
-            quick-tap-ms = <125>;
+            hold-trigger-key-positions = <24>;
         };
     };
 
@@ -133,7 +133,7 @@
 
         CONTROL {
             bindings = <
-&kp RG(LS(NUMBER_4))  &trans     &trans  &trans  &kp LA(R)  &trans       &trans     &trans         &trans     &trans     &trans     &kp F11
+&kp RG(LS(NUMBER_4))  &trans     &trans  &trans  &kp LA(R)  &kp RG(J)    &trans     &trans         &trans     &trans     &trans     &kp F11
 &trans                &copy_all  &trans  &trans  &kp RG(F)  &trans       &trans     &kp RA(C)      &kp LA(M)  &kp LA(N)  &kp LA(W)  &kp RG(SPACE)
 &trans                &kp LG(W)  &trans  &trans  &kp RG(J)  &trans       &kp RG(N)  &trans         &trans     &trans     &trans     &trans
                                          &trans  &trans     &kp RG(S)    &kp RG(Z)  &kp RG(LS(Z))  &trans

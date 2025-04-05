@@ -17,13 +17,13 @@
         compatible = "zmk,combos";
 
         bt_1 {
-            bindings = <&bt BT_SEL 0>;
+            bindings = <&bt BT_NXT>;
             key-positions = <1 2 3 4>;
         };
 
         bt_2 {
-            bindings = <&bt BT_SEL 4>;
-            key-positions = <7 8 9 10>;
+            bindings = <&bt BT_CLR_ALL>;
+            key-positions = <7 8 9 10 30>;
         };
 
         cancel_term {
@@ -48,13 +48,6 @@
     };
 
     macros {
-        long_word: long_word {
-            compatible = "zmk,behavior-macro";
-            #binding-cells = <0>;
-            bindings = <&kp LS(T) &kp E &kp X &kp A &kp S &kp LS(C) &kp O &kp D &kp I &kp N &kp G>;
-            label = "LONG_WORD";
-        };
-
         copy_all: copy_all {
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
@@ -142,7 +135,7 @@
             bindings = <
 &kp RG(LS(NUMBER_4))  &trans     &trans  &trans  &kp LA(R)  &trans       &trans     &trans         &trans     &trans     &trans     &kp F11
 &trans                &copy_all  &trans  &trans  &kp RG(F)  &trans       &trans     &kp RA(C)      &kp LA(M)  &kp LA(N)  &kp LA(W)  &kp RG(SPACE)
-&trans                &trans     &trans  &trans  &kp RG(J)  &trans       &kp RG(N)  &trans         &trans     &trans     &trans     &long_word
+&trans                &kp LG(W)  &trans  &trans  &kp RG(J)  &trans       &kp RG(N)  &trans         &trans     &trans     &trans     &trans
                                          &trans  &trans     &kp RG(S)    &kp RG(Z)  &kp RG(LS(Z))  &trans
             >;
 

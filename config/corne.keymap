@@ -108,10 +108,10 @@
 
             label = "SYMBOL";
             bindings = <
-&kp CARET      &kp SINGLE_QUOTE   &trans  &trans  &tap_dance LEFT_BRACE LESS_THAN  &kp SLASH        &kp EXCLAMATION  &tap_dance RIGHT_BRACE GT  &tap_dance SEMICOLON COLON  &kp ASTERISK      &kp PLUS   &kp AT
-&kp DOLLAR     &kp DOUBLE_QUOTES  &trans  &trans  &kp LEFT_PARENTHESIS             &kp PIPE         &kp PERIOD       &kp RIGHT_PARENTHESIS      &kp MINUS                   &kp PERCENT       &kp EQUAL  &kp TILDE
-&kp LS(POUND)  &kp GRAVE          &trans  &trans  &kp LEFT_BRACKET                 &kp BACKSLASH    &kp QUESTION     &kp RIGHT_BRACKET          &kp UNDERSCORE              &kp LA(NUMBER_3)  &kp COMMA  &kp AMPERSAND
-                                          &trans  &trans                           &trans           &trans           &trans                     &trans
+&kp CARET               &kp SINGLE_QUOTE   &trans  &trans  &tap_dance LEFT_BRACE LESS_THAN  &kp SLASH        &kp EXCLAMATION  &tap_dance RIGHT_BRACE GT  &tap_dance SEMICOLON COLON  &kp ASTERISK      &kp PLUS   &kp AT
+&tap_dance HASH DOLLAR  &kp DOUBLE_QUOTES  &trans  &trans  &kp LEFT_PARENTHESIS             &kp PIPE         &kp PERIOD       &kp RIGHT_PARENTHESIS      &kp MINUS                   &kp PERCENT       &kp EQUAL  &kp TILDE
+&kp LEFT_SHIFT          &kp GRAVE          &trans  &trans  &kp LEFT_BRACKET                 &kp BACKSLASH    &kp QUESTION     &kp RIGHT_BRACKET          &kp UNDERSCORE              &kp LA(NUMBER_3)  &kp COMMA  &kp AMPERSAND
+                                                   &trans  &trans                           &trans           &trans           &trans                     &trans
             >;
         };
 

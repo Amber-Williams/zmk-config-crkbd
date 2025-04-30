@@ -6,11 +6,9 @@
  */
 
 #include <behaviors.dtsi>
-#include <dt-bindings/zmk/backlight.h>
 #include <dt-bindings/zmk/bt.h>
 #include <dt-bindings/zmk/keys.h>
 #include <dt-bindings/zmk/pointing.h>
-#include <dt-bindings/zmk/rgb.h>
 
 / {
     combos {
@@ -33,17 +31,32 @@
 
         paste {
             bindings = <&kp RG(V)>;
-            key-positions = <3 4 2>;
+            key-positions = <4 34 3>;
         };
 
         copy {
             bindings = <&kp RG(C)>;
-            key-positions = <16 15 14>;
+            key-positions = <16 34 15>;
         };
 
         cut {
             bindings = <&kp RG(X)>;
-            key-positions = <28 27 26>;
+            key-positions = <28 34 27>;
+        };
+
+        caps {
+            bindings = <&caps_word>;
+            key-positions = <34 24>;
+        };
+
+        go_back {
+            bindings = <&mkp MB4>;
+            key-positions = <34 18>;
+        };
+
+        go_forward {
+            bindings = <&mkp MB5>;
+            key-positions = <34 17>;
         };
     };
 
@@ -53,6 +66,13 @@
             #binding-cells = <0>;
             bindings = <&kp RG(A) &kp RG(C)>;
             label = "COPY_ALL";
+        };
+
+        arrow_right: arrow_right {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <&kp MINUS &kp GT>;
+            label = "ARROW_RIGHT";
         };
     };
 
@@ -81,18 +101,18 @@
 
             label = "Base";
             bindings = <
-&kp ESC    &kp Q    &kp W  &kp E  &kp R        &kp T       &kp Y                    &kp U            &kp I             &kp O   &kp P          &kp F18
-&kp TAB    &lt 5 A  &kp S  &kp D  &lt 3 F      &kp G       &kp H                    &kp J            &kp K             &kp L   &kp RIGHT_GUI  &kp RC(B)
-&sk LSHFT  &kp Z    &kp X  &kp C  &kp V        &kp B       &kp N                    &kp M            &trans            &trans  &trans         &kp F19
-                           &sl 4  &lt 2 SPACE  &kp LALT    &mt RIGHT_COMMAND ENTER  &lt 1 BACKSPACE  &mt RCTRL DELETE
+&kp ESC         &kp Q  &kp W  &kp E  &kp R        &kp T       &kp Y                    &kp U            &kp I             &kp O   &kp P          &kp F18
+&kp TAB         &kp A  &kp S  &kp D  &lt 3 F      &kp G       &kp H                    &kp J            &kp K             &kp L   &kp RIGHT_GUI  &kp RC(B)
+&kp LEFT_SHIFT  &kp Z  &kp X  &kp C  &kp V        &kp B       &kp N                    &kp M            &trans            &trans  &trans         &kp F19
+                              &sl 4  &lt 2 SPACE  &kp LALT    &mt RIGHT_COMMAND ENTER  &lt 1 BACKSPACE  &mt RCTRL DELETE
             >;
         };
 
         NUMBER2 {
             bindings = <
-&trans  &kp PLUS   &trans  &kp KP_N7        &kp KP_N8        &kp KP_N9          &trans  &trans  &trans  &trans  &trans  &trans
-&trans  &kp EQUAL  &trans  &kp KP_N4        &kp KP_NUMBER_5  &kp KP_NUMBER_6    &trans  &trans  &trans  &trans  &trans  &trans
-&trans  &kp MINUS  &trans  &kp KP_N1        &kp KP_N2        &kp KP_N3          &trans  &trans  &trans  &trans  &trans  &trans
+&trans  &kp COLON  &trans  &kp KP_N7        &kp KP_N8        &kp KP_N9          &trans  &trans  &trans  &trans  &trans  &trans
+&trans  &kp COLON  &trans  &kp KP_N4        &kp KP_NUMBER_5  &kp KP_NUMBER_6    &trans  &trans  &trans  &trans  &trans  &trans
+&trans  &kp COLON  &trans  &kp KP_N1        &kp KP_N2        &kp KP_N3          &trans  &trans  &trans  &trans  &trans  &trans
                            &kp KP_NUMBER_0  &kp KP_N0        &kp DOT            &trans  &trans  &trans
             >;
 
@@ -108,10 +128,10 @@
 
             label = "SYMBOL";
             bindings = <
-&kp CARET               &kp SINGLE_QUOTE   &trans  &trans  &tap_dance LEFT_BRACE LESS_THAN  &kp SLASH        &kp EXCLAMATION  &tap_dance RIGHT_BRACE GT  &tap_dance SEMICOLON COLON  &kp ASTERISK      &kp PLUS   &kp AT
-&tap_dance HASH DOLLAR  &kp DOUBLE_QUOTES  &trans  &trans  &kp LEFT_PARENTHESIS             &kp PIPE         &kp PERIOD       &kp RIGHT_PARENTHESIS      &kp MINUS                   &kp PERCENT       &kp EQUAL  &kp TILDE
-&kp LEFT_SHIFT          &kp GRAVE          &trans  &trans  &kp LEFT_BRACKET                 &kp BACKSLASH    &kp QUESTION     &kp RIGHT_BRACKET          &kp UNDERSCORE              &kp LA(NUMBER_3)  &kp COMMA  &kp AMPERSAND
-                                                   &trans  &trans                           &trans           &trans           &trans                     &trans
+&kp CARET               &kp SINGLE_QUOTE   &trans  &kp LESS_THAN         &kp GREATER_THAN       &kp SLASH        &kp EXCLAMATION  &trans     &kp SEMICOLON  &trans            &trans     &kp AT
+&tap_dance HASH DOLLAR  &kp DOUBLE_QUOTES  &trans  &kp LEFT_PARENTHESIS  &kp RIGHT_PARENTHESIS  &kp PIPE         &kp PERIOD       &kp MINUS  &kp EQUAL      &kp PERCENT       &kp ASTRK  &kp TILDE
+&kp LEFT_SHIFT          &kp GRAVE          &trans  &kp LEFT_BRACKET      &kp RIGHT_BRACKET      &kp BACKSLASH    &kp QUESTION     &trans     &trans         &kp LA(NUMBER_3)  &kp COMMA  &kp AMPERSAND
+                                                   &trans                &trans                 &trans           &trans           &trans     &arrow_right
             >;
         };
 
@@ -140,17 +160,6 @@
             >;
 
             label = "CONTROL";
-        };
-
-        MOUSE {
-            bindings = <
-&trans  &trans  &trans  &trans  &trans  &trans    &trans           &trans          &trans        &trans          &trans  &bl BL_ON
-&trans  &trans  &trans  &trans  &trans  &trans    &msc SCRL_RIGHT  &msc SCRL_DOWN  &msc SCRL_UP  &msc SCRL_LEFT  &trans  &rgb_ug RGB_ON
-&trans  &trans  &trans  &trans  &trans  &trans    &trans           &trans          &trans        &trans          &trans  &trans
-                        &trans  &trans  &trans    &mkp MB4         &mkp MB5        &trans
-            >;
-
-            label = "MOUSE";
         };
     };
 };

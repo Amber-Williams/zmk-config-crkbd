@@ -28,36 +28,6 @@
             bindings = <&kp LC(C)>;
             key-positions = <6 5>;
         };
-
-        paste {
-            bindings = <&kp RG(V)>;
-            key-positions = <4 34 3>;
-        };
-
-        copy {
-            bindings = <&kp RG(C)>;
-            key-positions = <16 34 15>;
-        };
-
-        cut {
-            bindings = <&kp RG(X)>;
-            key-positions = <28 34 27>;
-        };
-
-        caps {
-            bindings = <&caps_word>;
-            key-positions = <34 24>;
-        };
-
-        go_back {
-            bindings = <&mkp MB4>;
-            key-positions = <34 18>;
-        };
-
-        go_forward {
-            bindings = <&mkp MB5>;
-            key-positions = <34 17>;
-        };
     };
 
     macros {
@@ -103,7 +73,7 @@
             bindings = <
 &kp ESC         &kp Q  &kp W  &kp E  &kp R        &kp T       &kp Y                    &kp U            &kp I             &kp O   &kp P          &kp F18
 &kp TAB         &kp A  &kp S  &kp D  &lt 3 F      &kp G       &kp H                    &kp J            &kp K             &kp L   &kp RIGHT_GUI  &kp RC(B)
-&kp LEFT_SHIFT  &kp Z  &kp X  &kp C  &kp V        &kp B       &kp N                    &kp M            &trans            &trans  &trans         &kp F19
+&kp LEFT_SHIFT  &kp Z  &kp X  &kp C  &kp V        &kp B       &kp N                    &kp M            &trans            &trans  &mo 4          &mo 5
                               &sl 4  &lt 2 SPACE  &kp LALT    &mt RIGHT_COMMAND ENTER  &lt 1 BACKSPACE  &mt RCTRL DELETE
             >;
         };
@@ -144,22 +114,33 @@
 
             label = "UTILITY";
             bindings = <
-&kp C_BRIGHTNESS_INC  &trans  &trans  &trans  &trans  &trans    &trans                 &trans                   &trans  &trans     &kp RG(PLUS)   &kp C_VOLUME_UP
-&kp C_BRIGHTNESS_DEC  &trans  &trans  &trans  &trans  &trans    &kp LEFT               &kp DOWN                 &kp UP  &kp RIGHT  &kp RG(MINUS)  &kp C_VOL_DN
-&trans                &trans  &trans  &trans  &trans  &trans    &trans                 &trans                   &trans  &trans     &trans         &kp K_MUTE
-                                      &trans  &trans  &trans    &mt RG(LEFT) LA(LEFT)  &mt RG(RIGHT) RA(RIGHT)  &trans
+&kp C_BRIGHTNESS_INC  &trans  &trans  &trans  &trans  &trans    &trans    &trans    &trans  &trans     &kp RG(PLUS)   &kp C_VOLUME_UP
+&kp C_BRIGHTNESS_DEC  &trans  &trans  &trans  &trans  &trans    &kp LEFT  &kp DOWN  &kp UP  &kp RIGHT  &kp RG(MINUS)  &kp C_VOL_DN
+&trans                &trans  &trans  &trans  &trans  &trans    &trans    &trans    &trans  &trans     &trans         &kp K_MUTE
+                                      &trans  &trans  &trans    &trans    &trans    &trans
             >;
         };
 
         CONTROL {
             bindings = <
-&kp RG(LS(NUMBER_4))  &trans     &trans  &trans  &kp LA(R)  &kp RG(J)    &trans     &trans         &trans     &trans     &trans     &kp F11
-&trans                &copy_all  &trans  &trans  &kp RG(F)  &trans       &trans     &kp RA(C)      &kp LA(M)  &kp LA(N)  &kp LA(W)  &kp RG(SPACE)
-&trans                &kp LG(W)  &trans  &trans  &kp RG(J)  &trans       &kp RG(N)  &trans         &trans     &trans     &trans     &trans
+&kp RG(LS(NUMBER_4))  &trans     &trans  &trans  &kp LG(P)  &trans       &trans     &trans         &trans     &trans     &trans     &kp F11
+&trans                &copy_all  &trans  &trans  &kp LG(C)  &mkp MB5     &mkp MB4   &kp RA(C)      &kp LA(M)  &kp LA(N)  &kp LA(W)  &trans
+&caps_word            &trans     &trans  &trans  &kp LG(V)  &trans       &trans     &trans         &trans     &trans     &trans     &trans
                                          &trans  &trans     &kp RG(S)    &kp RG(Z)  &kp RG(LS(Z))  &trans
             >;
 
             label = "CONTROL";
+        };
+
+        CHROME {
+            bindings = <
+&kp RG(RS(T))  &trans  &trans  &trans  &trans  &trans    &trans  &trans           &trans            &trans            &trans            &trans
+&trans         &trans  &trans  &trans  &trans  &trans    &trans  &kp RC(RS(TAB))  &kp RC(TAB)       &trans            &trans            &trans
+&trans         &trans  &trans  &trans  &trans  &trans    &trans  &trans           &kp RG(NUMBER_1)  &kp RG(NUMBER_2)  &kp RG(NUMBER_3)  &trans
+                               &trans  &trans  &trans    &trans  &trans           &trans
+            >;
+
+            label = "CHROME";
         };
     };
 };

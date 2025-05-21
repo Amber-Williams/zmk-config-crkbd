@@ -123,9 +123,9 @@
 
         CONTROL {
             bindings = <
-&kp RG(LS(NUMBER_4))  &trans     &trans  &trans  &kp LG(P)  &trans       &trans     &trans         &trans     &trans     &trans     &kp F11
+&kp RG(LS(NUMBER_4))  &trans     &trans  &trans  &kp LG(V)  &trans       &trans     &trans         &trans     &trans     &trans     &kp F11
 &trans                &copy_all  &trans  &trans  &kp LG(C)  &mkp MB5     &mkp MB4   &kp RA(C)      &kp LA(M)  &kp LA(N)  &kp LA(W)  &trans
-&caps_word            &trans     &trans  &trans  &kp LG(V)  &trans       &trans     &trans         &trans     &trans     &trans     &trans
+&caps_word            &trans     &trans  &trans  &kp LG(X)  &trans       &trans     &trans         &trans     &trans     &trans     &trans
                                          &trans  &trans     &kp RG(S)    &kp RG(Z)  &kp RG(LS(Z))  &trans
             >;
 

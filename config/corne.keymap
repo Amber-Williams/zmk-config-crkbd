@@ -73,7 +73,7 @@
             bindings = <
 &kp ESC         &kp Q  &kp W  &kp E  &kp R        &kp T       &kp Y                    &kp U            &kp I             &kp O   &kp P          &kp F18
 &kp TAB         &kp A  &kp S  &kp D  &lt 3 F      &kp G       &kp H                    &kp J            &kp K             &kp L   &kp RIGHT_GUI  &kp RC(B)
-&kp LEFT_SHIFT  &kp Z  &kp X  &kp C  &kp V        &kp B       &kp N                    &kp M            &trans            &trans  &mo 4          &mo 5
+&kp LEFT_SHIFT  &kp Z  &kp X  &kp C  &kp V        &kp B       &kp N                    &kp M            &trans            &trans  &trans         &mo 5
                               &sl 4  &lt 2 SPACE  &kp LALT    &mt RIGHT_COMMAND ENTER  &lt 1 BACKSPACE  &mt RCTRL DELETE
             >;
         };
@@ -123,10 +123,10 @@
 
         CONTROL {
             bindings = <
-&kp RG(LS(NUMBER_4))  &trans     &trans  &trans  &kp LG(V)  &trans       &trans     &trans         &trans     &trans     &trans     &kp F11
-&trans                &copy_all  &trans  &trans  &kp LG(C)  &mkp MB5     &mkp MB4   &kp RA(C)      &kp LA(M)  &kp LA(N)  &kp LA(W)  &trans
-&caps_word            &trans     &trans  &trans  &kp LG(X)  &trans       &trans     &trans         &trans     &trans     &trans     &trans
-                                         &trans  &trans     &kp RG(S)    &kp RG(Z)  &kp RG(LS(Z))  &trans
+&kp RG(LS(NUMBER_4))  &trans  &trans  &trans  &trans  &trans       &trans     &trans         &trans     &trans     &trans     &kp F11
+&trans                &trans  &trans  &trans  &trans  &mkp MB5     &mkp MB4   &kp RA(C)      &kp LA(M)  &kp LA(N)  &kp LA(W)  &trans
+&caps_word            &trans  &trans  &trans  &trans  &trans       &trans     &trans         &trans     &trans     &trans     &trans
+                                      &trans  &trans  &kp RG(S)    &kp RG(Z)  &kp RG(LS(Z))  &trans
             >;
 
             label = "CONTROL";

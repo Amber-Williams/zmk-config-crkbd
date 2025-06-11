@@ -33,6 +33,13 @@
             key-positions = <6 5>;
             timeout-ms = <50>;
         };
+
+        test-rolling-combo {
+            bindings = <&arrow_right>;
+            key-positions = <34 33>;
+            layers = <0>;
+            timeout-ms = <500>;
+        };
     };
 
     macros {
@@ -76,10 +83,10 @@
 
             label = "Base";
             bindings = <
-&kp ESC         &kp Q  &kp W  &kp E  &kp R        &kp T       &kp Y                    &kp U            &kp I             &kp O   &kp P          &kp F18
-&kp TAB         &kp A  &kp S  &kp D  &lt 3 F      &kp G       &kp H                    &kp J            &kp K             &kp L   &kp RIGHT_GUI  &kp RC(B)
-&kp LEFT_SHIFT  &kp Z  &kp X  &kp C  &kp V        &kp B       &kp N                    &kp M            &trans            &trans  &trans         &sl 5
-                              &sl 4  &lt 2 SPACE  &kp LALT    &mt RIGHT_COMMAND ENTER  &lt 1 BACKSPACE  &mt RCTRL DELETE
+&kp ESC         &kp Q  &kp W  &kp E  &kp R        &kp T       &kp Y      &kp U            &kp I      &kp O   &kp P          &kp F18
+&kp TAB         &kp A  &kp S  &kp D  &lt 3 F      &kp G       &kp H      &kp J            &kp K      &kp L   &kp RIGHT_GUI  &kp RC(B)
+&kp LEFT_SHIFT  &kp Z  &kp X  &kp C  &kp V        &kp B       &kp N      &kp M            &trans     &trans  &trans         &sl 5
+                              &sl 4  &lt 2 SPACE  &sk LALT    &kp ENTER  &lt 1 BACKSPACE  &kp RCTRL
             >;
         };
 
@@ -119,10 +126,10 @@
 
             label = "UTILITY";
             bindings = <
-&kp C_BRIGHTNESS_INC  &trans  &trans  &trans  &trans  &trans    &trans    &trans    &trans  &trans     &kp RG(PLUS)   &kp C_VOLUME_UP
-&kp C_BRIGHTNESS_DEC  &trans  &trans  &trans  &trans  &trans    &kp LEFT  &kp DOWN  &kp UP  &kp RIGHT  &kp RG(MINUS)  &kp C_VOL_DN
-&trans                &trans  &trans  &trans  &trans  &trans    &trans    &trans    &trans  &trans     &trans         &kp K_MUTE
-                                      &trans  &trans  &trans    &trans    &trans    &trans
+&kp C_BRIGHTNESS_INC  &trans  &trans  &trans  &trans  &trans    &trans    &kp RG(MINUS)  &kp RG(PLUS)  &trans     &trans  &kp C_VOLUME_UP
+&kp C_BRIGHTNESS_DEC  &trans  &trans  &trans  &trans  &trans    &kp LEFT  &kp DOWN       &kp UP        &kp RIGHT  &trans  &kp C_VOL_DN
+&trans                &trans  &trans  &trans  &trans  &trans    &trans    &trans         &trans        &trans     &trans  &kp K_MUTE
+                                      &trans  &trans  &trans    &trans    &trans         &trans
             >;
         };
 
@@ -139,10 +146,10 @@
 
         CHROME {
             bindings = <
-&trans  &trans  &trans  &trans  &trans  &trans    &kp RG(NUMBER_1)  &kp RG(NUMBER_2)  &kp RG(NUMBER_3)  &kp RG(NUMBER_4)  &kp RG(N5)  &trans
-&trans  &trans  &trans  &trans  &trans  &trans    &trans            &kp RC(RS(TAB))   &kp RC(TAB)       &trans            &trans      &trans
-&trans  &trans  &trans  &trans  &trans  &trans    &kp RG(RS(T))     &trans            &trans            &trans            &trans      &kp RG(RA(I))
-                        &trans  &trans  &trans    &trans            &trans            &trans
+&kp ESC  &trans  &trans  &trans  &trans  &trans    &kp RG(NUMBER_1)  &kp RG(NUMBER_2)  &kp RG(NUMBER_3)  &kp RG(NUMBER_4)  &kp RG(N5)  &trans
+&trans   &trans  &trans  &trans  &trans  &trans    &trans            &kp RC(RS(TAB))   &kp RC(TAB)       &trans            &trans      &trans
+&trans   &trans  &trans  &trans  &trans  &trans    &kp RG(RS(T))     &trans            &trans            &trans            &trans      &kp RG(RA(I))
+                         &trans  &trans  &trans    &trans            &trans            &trans
             >;
 
             label = "CHROME";

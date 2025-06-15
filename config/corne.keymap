@@ -83,9 +83,9 @@
 
             label = "Base";
             bindings = <
-&kp ESC         &kp Q  &kp W  &kp E  &kp R        &kp T       &kp Y      &kp U            &kp I      &kp O   &kp P          &kp F18
-&kp TAB         &kp A  &kp S  &kp D  &lt 3 F      &kp G       &kp H      &kp J            &kp K      &kp L   &kp RIGHT_GUI  &kp RC(B)
-&kp LEFT_SHIFT  &kp Z  &kp X  &kp C  &kp V        &kp B       &kp N      &kp M            &trans     &trans  &trans         &sl 5
+&kp ESC         &kp Q  &kp W  &kp E  &kp R        &kp T       &kp Y      &kp U            &kp I      &kp O   &trans           &kp F18
+&kp TAB         &kp A  &kp S  &kp D  &lt 3 F      &kp G       &kp H      &kp J            &kp K      &kp L   &mt RIGHT_GUI P  &kp RC(B)
+&kp LEFT_SHIFT  &kp Z  &kp X  &kp C  &kp V        &kp B       &kp N      &kp M            &trans     &trans  &trans           &sl 5
                               &sl 4  &lt 2 SPACE  &sk LALT    &kp ENTER  &lt 1 BACKSPACE  &kp RCTRL
             >;
         };

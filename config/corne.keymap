@@ -69,6 +69,16 @@
             flavor = "tap-preferred";
             hold-trigger-key-positions = <24>;
         };
+
+        Hrm: Hrm {
+            compatible = "zmk,behavior-hold-tap";
+            label = "HRM";
+            bindings = <&kp>, <&kp>;
+
+            #binding-cells = <2>;
+            tapping-term-ms = <250>;
+            flavor = "tap-preferred";
+        };
     };
 
     keymap {
@@ -83,10 +93,10 @@
 
             label = "Base";
             bindings = <
-&kp ESC         &kp Q  &kp W  &kp E  &kp R        &kp T       &kp Y      &kp U            &kp I      &kp O   &trans           &kp F18
-&kp TAB         &kp A  &kp S  &kp D  &lt 3 F      &kp G       &kp H      &kp J            &kp K      &kp L   &mt RIGHT_GUI P  &kp RC(B)
-&kp LEFT_SHIFT  &kp Z  &kp X  &kp C  &kp V        &kp B       &kp N      &kp M            &trans     &trans  &trans           &sl 5
-                              &sl 4  &lt 2 SPACE  &sk LALT    &kp ENTER  &lt 1 BACKSPACE  &kp RCTRL
+&kp ESC         &kp Q            &kp W         &kp E            &kp R        &kp T       &kp Y      &kp U            &kp I      &kp O   &trans           &kp F18
+&kp TAB         &Hrm LEFT_GUI A  &Hrm RCTRL S  &Hrm LEFT_ALT D  &lt 3 F      &kp G       &kp H      &kp J            &kp K      &kp L   &mt RIGHT_GUI P  &kp RC(B)
+&kp LEFT_SHIFT  &kp Z            &kp X         &kp C            &kp V        &kp B       &kp N      &kp M            &trans     &trans  &trans           &sl 5
+                                               &sl 4            &lt 2 SPACE  &sk LALT    &kp ENTER  &lt 1 BACKSPACE  &kp RCTRL
             >;
         };
 

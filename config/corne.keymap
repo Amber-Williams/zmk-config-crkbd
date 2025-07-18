@@ -53,13 +53,13 @@
         dash {
             bindings = <&kp MINUS>;
             key-positions = <19 20>;
-            layers = <2>;
+            layers = <2 0>;
         };
 
         underscore {
             bindings = <&kp UNDER>;
             key-positions = <31 32>;
-            layers = <2>;
+            layers = <2 0>;
             timeout-ms = <100>;
         };
 
@@ -67,14 +67,14 @@
             bindings = <&kp SLASH>;
             key-positions = <19 8>;
             timeout-ms = <100>;
-            layers = <2>;
+            layers = <2 0>;
         };
 
         back_slash {
             bindings = <&kp BACKSLASH>;
             key-positions = <7 20>;
             timeout-ms = <100>;
-            layers = <2>;
+            layers = <2 0>;
         };
     };
 

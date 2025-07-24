@@ -44,7 +44,7 @@
 
         zoom_out {
             bindings = <&kp RG(MINUS)>;
-            key-positions = <19 21 20>;
+            key-positions = <31 32 33>;
             timeout-ms = <100>;
             require-prior-idle-ms = <250>;
             layers = <0>;
@@ -52,29 +52,29 @@
 
         underscore {
             bindings = <&kp UNDER>;
-            key-positions = <19 20>;
+            key-positions = <31 32>;
             layers = <2 0>;
-            timeout-ms = <100>;
+            timeout-ms = <80>;
         };
 
         dash {
             bindings = <&kp MINUS>;
             key-positions = <7 8>;
             layers = <2 0>;
-            timeout-ms = <100>;
+            timeout-ms = <80>;
         };
 
         forward_slash {
             bindings = <&kp SLASH>;
             key-positions = <19 8>;
-            timeout-ms = <100>;
+            timeout-ms = <80>;
             layers = <2 0>;
         };
 
         back_slash {
             bindings = <&kp BACKSLASH>;
             key-positions = <7 20>;
-            timeout-ms = <100>;
+            timeout-ms = <80>;
             layers = <2 0>;
         };
     };

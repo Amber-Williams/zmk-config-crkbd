@@ -50,15 +50,16 @@
             layers = <0>;
         };
 
-        dash {
-            bindings = <&kp MINUS>;
-            key-positions = <19 20>;
-            layers = <2 0>;
-        };
-
         underscore {
             bindings = <&kp UNDER>;
-            key-positions = <31 32>;
+            key-positions = <19 20>;
+            layers = <2 0>;
+            timeout-ms = <100>;
+        };
+
+        dash {
+            bindings = <&kp MINUS>;
+            key-positions = <7 8>;
             layers = <2 0>;
             timeout-ms = <100>;
         };
@@ -198,7 +199,7 @@
         CONTROL {
             bindings = <
 &to 0     &trans     &trans  &trans     &kp RG(LS(Z))  &trans      &trans  &trans  &trans  &trans  &trans  &trans
-&mkp MB4  &trans     &trans  &trans     &trans         &mkp MB5    &trans  &trans  &trans  &trans  &trans  &trans
+&mkp MB4  &kp LG(Z)  &trans  &kp LG(C)  &kp LG(V)      &mkp MB5    &trans  &trans  &trans  &trans  &trans  &trans
 &trans    &kp LG(Z)  &trans  &kp LG(C)  &kp RG(V)      &trans      &trans  &trans  &trans  &trans  &trans  &trans
                              &trans     &trans         &trans      &trans  &trans  &trans
             >;
